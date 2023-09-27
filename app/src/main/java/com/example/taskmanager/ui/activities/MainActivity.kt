@@ -1,5 +1,6 @@
-package com.example.taskmanager
+package com.example.taskmanager.ui.activities
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.taskmanager.R
 import com.example.taskmanager.data.local.Pref
 import com.example.taskmanager.databinding.ActivityMainBinding
 
@@ -19,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         Pref(this)
     }
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -30,9 +33,9 @@ class MainActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
 
-        if(!pref.isUserShow())
+        if (!pref.isUserShow())
 
-        navController.navigate(R.id.onBoardingFragment)
+            navController.navigate(R.id.onBoardingFragment)
 
         val appBarConfiguration = AppBarConfiguration(
             setOf(

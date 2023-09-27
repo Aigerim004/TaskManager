@@ -11,7 +11,7 @@ class Pref(private val context: Context) {
         return pref.getBoolean(BOARD_KEY, false)
     }
 
-    fun userShowed(){
+    fun userShowed() {
         pref.edit().putBoolean(BOARD_KEY, true).apply()
     }
 

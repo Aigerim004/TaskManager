@@ -26,21 +26,20 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        return root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.recyclerView.adapter = adapter
-        setFragmentResultListener(RESULT_KEY){ requestKey, bundle ->
+
+        setFragmentResultListener(RESULT_KEY) { requestKey, bundle ->
             val data = bundle.getSerializable(TASK_KEY) as Task
             adapter.setData(data)
         }
-        binding.fab.setOnClickListener{
+
+        binding.fab.setOnClickListener {
             findNavController().navigate(R.id.taskFragment)
         }
     }

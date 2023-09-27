@@ -12,7 +12,6 @@ import com.example.taskmanager.databinding.FragmentOnBoardingBinding
 import com.example.taskmanager.ui.onboarding.adapter.OnBoardingAdapter
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
-
 class OnBoardingFragment : Fragment() {
 
     private lateinit var binding: FragmentOnBoardingBinding
